@@ -44,3 +44,39 @@ two_bit_combinations = (
 def test_two_bit_numbers(implementation_func, a, b, expected_result):
     result = implementation_func(a, b)
     assert result == expected_result, f"{result=} != {expected_result=}"
+
+
+three_bit_combinations = (
+    ["1001", "101", "1110"],
+    ["1110", "1001", "10111"],
+    ["10", "1101", "1111"],
+    ["1", "1000", "1001"],
+)
+
+
+@pytest.mark.parametrize(
+    "a,b,expected_result",
+    three_bit_combinations,
+)
+def test_three_bit_numbers(implementation_func, a, b, expected_result):
+    result = implementation_func(a, b)
+    assert result == expected_result, f"{result=} != {expected_result=}"
+
+
+many_bit_combinations = (
+    ["010010011001", "1110001001011", "10000011100100"],
+    [
+        "010010011001100101011101100101",
+        "111000100101100001111000011",
+        "11001011110010001101100101000",
+    ],
+)
+
+
+@pytest.mark.parametrize(
+    "a,b,expected_result",
+    three_bit_combinations,
+)
+def test_many_bit_numbers(implementation_func, a, b, expected_result):
+    result = implementation_func(a, b)
+    assert result == expected_result, f"{result=} != {expected_result=}"
