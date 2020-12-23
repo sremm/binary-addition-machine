@@ -75,9 +75,7 @@ def add_binary_boolean(*args: str) -> str:
     """ homegrown implementation using boolean logic"""
     # convert all arguments to binary number class
     binary_numbers: List[BinaryNumber] = [BinaryNumber(x) for x in args]
-    binary_summed = BinaryNumber("0")
-    for num in binary_numbers:
-        binary_summed += num
+    binary_summed = sum(binary_numbers, BinaryNumber("0"))
     return str(binary_summed)
 
 
